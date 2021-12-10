@@ -60,7 +60,7 @@ gulp.task('copy-assets', () => {
 gulp.task('watch', () => {
   browsersync.init({
     server: {
-      baseDir: './dist/',
+      baseDir: './docs/',
       serveStaticOptions: {
         extensions: ['html'],
       },
