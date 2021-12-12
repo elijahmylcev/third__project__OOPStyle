@@ -996,7 +996,15 @@ function () {
     value: function bindCloseBtn() {
       var _this2 = this;
 
-      this.close.addEventListener('click', function () {
+      // this.close.addEventListener('click', () => {
+      //   this.overlay.style.display = 'none';
+      //   this.player.pauseVideo();
+      // });
+      this.overlay.addEventListener('click', function (e) {
+        if (e.target == document.querySelector('.video')) {
+          return;
+        }
+
         _this2.overlay.style.display = 'none';
 
         _this2.player.pauseVideo();
@@ -1010,7 +1018,6 @@ function () {
         width: '100%',
         videoId: "".concat(url)
       });
-      console.log(this.player);
       this.overlay.style.display = 'flex';
     }
   }, {

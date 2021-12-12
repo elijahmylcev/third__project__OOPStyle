@@ -19,7 +19,16 @@ export default class VideoPlayer {
   }
 
   bindCloseBtn() {
-    this.close.addEventListener('click', () => {
+    // this.close.addEventListener('click', () => {
+    //   this.overlay.style.display = 'none';
+    //   this.player.pauseVideo();
+    // });
+
+    this.overlay.addEventListener('click', (e) => {
+      if (e.target == document.querySelector('.video')) {
+        return;
+      }
+
       this.overlay.style.display = 'none';
       this.player.pauseVideo();
     });
@@ -32,7 +41,6 @@ export default class VideoPlayer {
       videoId: `${url}`,
     });
 
-    console.log(this.player);
     this.overlay.style.display = 'flex';
   }
 
