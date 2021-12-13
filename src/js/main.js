@@ -1,3 +1,4 @@
+import Difference from './modules/difference';
 import VideoPlayer from './modules/playVideo';
 import MainSlider from './modules/slider/slider-main';
 import MiniSlider from './modules/slider/slider-mini';
@@ -35,4 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
     activeClass: 'feed__item-active',
   });
   feedSlider.init();
+
+  new Difference('.officerOld', '.officerNew', '.officer__card-item').init();
 });
