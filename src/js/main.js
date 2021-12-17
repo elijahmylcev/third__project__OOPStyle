@@ -1,6 +1,8 @@
 import Difference from './modules/difference';
+import Download from './modules/download';
 import Form from './modules/form';
 import VideoPlayer from './modules/playVideo';
+import ShowInfo from './modules/showInfo';
 import MainSlider from './modules/slider/slider-main';
 import MiniSlider from './modules/slider/slider-mini';
 
@@ -47,4 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
   new Difference('.officerOld', '.officerNew', '.officer__card-item').init();
 
   new Form('.form').init();
+
+  new ShowInfo('.plus__content').init();
+  new Download('.download').init();
 });
