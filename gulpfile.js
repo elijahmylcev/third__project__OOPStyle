@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const browsersync = require('browser-sync');
 
-const dist = './docs/';
+// const dist = './docs/';
+const dist = '../../../../mnt/c/OpenServer/domains/bringItUp/';
 
 gulp.task('copy-html', () => {
   return gulp.src('./src/*.html').pipe(gulp.dest(dist)).pipe(browsersync.stream());
