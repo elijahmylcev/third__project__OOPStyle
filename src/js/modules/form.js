@@ -94,15 +94,21 @@ export default class Form {
     this.forms.forEach((form) => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
+        // form animated
+        form.classList.add('animated', 'fadeOutUp');
+        setTimeout(() => {
+          form.style.display = 'none';
+        }, 300);
 
         let statusMessage = document.createElement('div');
         statusMessage.style.cssText = `
           margin-top: 15px;
-          font-size: 18px;
+          font-size: 22px;
           color: gray;
         `;
         form.parentNode.appendChild(statusMessage);
 
+        statusMessage.classList.add('animated', 'fadeInUp');
         statusMessage.textContent = this.message.loading;
 
         const formData = new FormData(form);
@@ -119,7 +125,10 @@ export default class Form {
             this.clearInputs();
             setTimeout(() => {
               statusMessage.remove();
-            }, 5000);
+              form.style.display = 'block';
+              form.classList.remove('fadeOutUp');
+              form.classList.add('fadeInUp');
+            }, 6000);
           });
       });
     });
